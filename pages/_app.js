@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Router from 'next/router'
 import Head from 'next/head'
-import { ThemeProvider } from 'next-themes'
 import { LazyMotion, domAnimation, AnimatePresence } from 'framer-motion'
 
 import '../styles/tailwind.css'
@@ -10,7 +9,6 @@ import '../styles/app.css'
 import { SiteContextProvider } from '@lib/context'
 
 import { isBrowser } from '@lib/helpers'
-import Cart from '@modules/shop/cart'
 
 const MyApp = ({ Component, pageProps, router }) => {
   const [isLoading, setLoading] = useState(false)
@@ -68,28 +66,24 @@ const MyApp = ({ Component, pageProps, router }) => {
   }, [])
 
   return (
-    <ThemeProvider disableTransitionOnChange>
-      <SiteContextProvider data={{ ...pageProps?.data?.site }}>
-        <LazyMotion features={domAnimation}>
-          {isLoading && (
-            <Head>
-              <title>Loading...</title>
-            </Head>
-          )}
-          <AnimatePresence
-            exitBeforeEnter
-            onExitComplete={() => {
-              window.scrollTo(0, 0)
-              document.body.classList.remove('overflow-hidden')
-            }}
-          >
-            <Component key={router.asPath.split('?')[0]} {...pageProps} />
-          </AnimatePresence>
-
-          <Cart data={{ ...pageProps?.data?.site }} />
-        </LazyMotion>
-      </SiteContextProvider>
-    </ThemeProvider>
+    <SiteContextProvider data={{ ...pageProps?.data?.site }}>
+      <LazyMotion features={domAnimation}>
+        {isLoading && (
+          <Head>
+            <title>Loading...</title>
+          </Head>
+        )}
+        <AnimatePresence
+          exitBeforeEnter
+          onExitComplete={() => {
+            window.scrollTo(0, 0)
+            document.body.classList.remove('overflow-hidden')
+          }}
+        >
+          <Component key={router.asPath.split('?')[0]} {...pageProps} />
+        </AnimatePresence>
+      </LazyMotion>
+    </SiteContextProvider>
   )
 }
 

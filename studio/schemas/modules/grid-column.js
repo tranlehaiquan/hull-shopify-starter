@@ -19,11 +19,7 @@ export default {
       title: 'Blocks',
       name: 'blocks',
       type: 'array',
-      of: [
-        { type: 'freeform' },
-        { type: 'accordions' },
-        { type: 'productCard' }
-      ]
+      of: [{ type: 'freeform' }, { type: 'accordions' }]
     }
   ],
   preview: {

@@ -30,13 +30,7 @@ export default {
                 title: '(A) Internal Page',
                 name: 'page',
                 type: 'reference',
-                to: [
-                  { type: 'homePage' },
-                  { type: 'shopPage' },
-                  { type: 'page' },
-                  { type: 'collection' },
-                  { type: 'product' }
-                ]
+                to: [{ type: 'homePage' }, { type: 'page' }]
               },
               {
                 title: '(B) External URL',

@@ -250,10 +250,6 @@ a[href="#content"].skip-link {
           @apply text-xl leading-normal;
         }
       }
-
-      &--featured {
-        @apply flex;
-      }
     }
   }
 

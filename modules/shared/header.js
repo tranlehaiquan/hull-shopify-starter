@@ -14,12 +14,7 @@ import MegaNavigation from '@blocks/navigation/mega-nav'
 import Icon from '@components/icon'
 
 // Context helpers
-import {
-  useSiteContext,
-  useToggleMegaNav,
-  useToggleCart,
-  useCartCount,
-} from '@lib/context'
+import { useSiteContext, useToggleMegaNav } from '@lib/context'
 
 const Header = ({ data = {}, isTransparent }) => {
   // expand our header data
@@ -145,8 +140,6 @@ const Header = ({ data = {}, isTransparent }) => {
                       />
                     </div>
                   </FocusTrap>
-
-                  <CartToggle />
                 </div>
 
                 {/* Desktop Header Menu */}
@@ -169,8 +162,6 @@ const Header = ({ data = {}, isTransparent }) => {
                         useMegaNav
                       />
                     )}
-
-                    <CartToggle />
                   </div>
                 </div>
               </nav>
@@ -197,35 +188,6 @@ const Header = ({ data = {}, isTransparent }) => {
 
       <span ref={observerRef} className="header--observer" />
     </>
-  )
-}
-
-const CartToggle = () => {
-  const toggleCart = useToggleCart()
-  const cartCount = useCartCount()
-
-  return (
-    <button className="cart-toggle" onClick={() => toggleCart()}>
-      Cart
-      <span
-        className={cx('cart-toggle--count', {
-          'is-active': cartCount > 0,
-        })}
-      >
-        {cartCount}
-      </span>
-    </button>
-  )
-}
-
-const HeaderBackdrop = ({ isActive, onClick }) => {
-  return (
-    <div
-      className={cx('header--backdrop', {
-        'is-active': isActive,
-      })}
-      onClick={onClick}
-    />
   )
 }
 

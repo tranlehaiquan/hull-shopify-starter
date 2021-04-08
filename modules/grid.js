@@ -3,9 +3,6 @@ import cx from 'classnames'
 
 import Freeform from '@blocks/freeform'
 import Accordions from '@blocks/accordions'
-import ProductCard from '@blocks/shop/product-card'
-// import Carousel from '@blocks/Carousel'
-// import Photo from '@blocks/photo'
 
 const Grid = ({ data = {} }) => {
   const { size, columns } = data
@@ -81,16 +78,6 @@ const GridBlock = ({ block }) => {
       return <Freeform data={block} />
     case 'accordions':
       return <Accordions data={block} />
-    case 'productCard':
-      return (
-        <ProductCard
-          className="is-inline"
-          product={block.product}
-          hasVisuals
-          showThumbs
-          showPrice
-        />
-      )
     default:
       return null
   }

@@ -26,7 +26,7 @@ export default {
       options: {
         icon: FiAlertCircle,
         headline: 'Note',
-        message: `On desktop, dropdowns will appear as a "mega-nav". On mobile, dropdowns will appear as accordions. The "Cart" toggle will always appear to the right of the header on all screen sizes.`,
+        message: `On desktop, dropdowns will appear as a "mega-nav". On mobile, dropdowns will appear as accordions.`,
         tone: 'caution'
       }
     },

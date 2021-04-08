@@ -25,13 +25,7 @@ export default {
       title: 'Link',
       name: 'link',
       type: 'reference',
-      to: [
-        { type: 'homePage' },
-        { type: 'shopPage' },
-        { type: 'page' },
-        { type: 'collection' },
-        { type: 'product' }
-      ],
+      to: [{ type: 'homePage' }, { type: 'page' }],
       description: 'Show a link to "Learn More" about your cookie policy.'
     }
   ],

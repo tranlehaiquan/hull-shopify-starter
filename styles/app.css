@@ -11,7 +11,6 @@
 
 @import "components/_accordions";
 @import "components/_carousels";
-@import "components/_counters";
 @import "components/_cursors";
 @import "components/_drawers";
 @import "components/_dropdowns";
@@ -22,13 +21,9 @@
 @import "modules/_header";
 @import "modules/_mega-nav";
 @import "modules/_footer";
-@import "modules/_cart";
 
 @import "modules/_hero";
 @import "modules/_divider";
-@import "modules/_collection";
-@import "modules/_product";
-@import "modules/_theme-switch";
 
 @import "_shame";
 

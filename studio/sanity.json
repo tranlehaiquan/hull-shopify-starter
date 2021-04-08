@@ -54,10 +54,6 @@
       "path": "./parts/resolve-actions.js"
     },
     {
-      "implements": "part:@sanity/base/document-badges/resolver",
-      "path": "./parts/resolve-badges.js"
-    },
-    {
       "implements": "part:@sanity/form-builder/input-resolver",
       "path": "./parts/input-resolver.js"
     }

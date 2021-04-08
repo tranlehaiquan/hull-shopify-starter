@@ -3,12 +3,17 @@ import { useIntersection } from 'use-intersection'
 import { Marqy } from 'marqy'
 
 import Photo from '@components/photo'
-import ProductCard from '@blocks/shop/product-card'
 
 const Marquee = ({ data = {} }) => {
   const { items, speed, reverse, pausable } = data
 
   if (!items?.length) return null
+
+  const hasItemType = items.some(
+    (item) => item._type === 'simple' || item._type === 'photo'
+  )
+
+  if (!hasItemType) return null
 
   const marqueeRef = useRef()
   const isIntersecting = useIntersection(marqueeRef, {
@@ -44,18 +49,6 @@ const Marquee = ({ data = {} }) => {
                       photo={item.photo}
                       hasPlaceholder={false}
                       forceLoad={isIntersecting}
-                    />
-                  </div>
-                )
-              case 'product':
-                return (
-                  <div className="marquee--product">
-                    <ProductCard
-                      key={key}
-                      product={item.product}
-                      hasVisuals
-                      showThumbs
-                      showPrice
                     />
                   </div>
                 )

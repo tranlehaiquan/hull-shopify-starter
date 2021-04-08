@@ -13,20 +13,18 @@ const previewURL =
 
 const singletons = [
   'homePage',
-  'shopPage',
   'errorPage',
   'generalSettings',
   'cookieSettings',
   'promoSettings',
   'headerSettings',
   'footerSettings',
-  'cartSettings',
   'seoSettings'
 ]
 
-const editAndDelete = ['product', 'productVariant']
+const editAndDelete = []
 
-const previews = ['homePage', 'shopPage', 'page', 'product', 'collection']
+const previews = ['homePage', 'page']
 
 const PreviewAction = props => {
   const slug = props.draft

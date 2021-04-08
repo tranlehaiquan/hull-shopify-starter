@@ -9,7 +9,6 @@ import { isBrowser } from '@lib/helpers'
 import { swipeAnim } from '@lib/animate'
 
 import Menu from './menu'
-import FeaturedProducts from './featured-products'
 
 const MegaNavigation = ({ items = [], headerHeight }) => {
   const dropdowns = items.filter((item) => {
@@ -74,18 +73,6 @@ const MegaNavigation = ({ items = [], headerHeight }) => {
                         hasFocus={hasFocus && isActive}
                         onClick={() => toggleMegaNav(false)}
                       />
-
-                      {dropdown.featured && (
-                        <div className="mega-item--featured">
-                          <div className="mega-item--featured-title">
-                            <span>Featured</span>
-                          </div>
-                          <FeaturedProducts
-                            products={dropdown.featured}
-                            onClick={() => toggleMegaNav(false)}
-                          />
-                        </div>
-                      )}
                     </m.div>
                   </div>
                 </div>

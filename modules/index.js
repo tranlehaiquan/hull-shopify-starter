@@ -5,17 +5,8 @@ const Grid = dynamic(() => import('./grid'))
 const Hero = dynamic(() => import('./hero'))
 const Marquee = dynamic(() => import('./marquee'))
 const DividerPhoto = dynamic(() => import('./divider-photo'))
-const ProductHero = dynamic(() => import('./shop/product-hero'))
-const Collection = dynamic(() => import('./shop/collection'))
 
-export const Module = ({
-  module,
-  product,
-  activeVariant,
-  onVariantChange,
-  collectionProducts,
-  featuredProducts,
-}) => {
+export const Module = ({ module }) => {
   const type = module._type
 
   switch (type) {
@@ -27,21 +18,6 @@ export const Module = ({
       return <Marquee data={module} />
     case 'dividerPhoto':
       return <DividerPhoto data={module} />
-    case 'productHero':
-      return (
-        <ProductHero
-          product={product}
-          activeVariant={activeVariant}
-          onVariantChange={onVariantChange}
-        />
-      )
-    case 'collectionGrid':
-      return (
-        <Collection
-          products={collectionProducts}
-          featuredProducts={featuredProducts}
-        />
-      )
     default:
       return null
   }

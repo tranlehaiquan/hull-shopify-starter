@@ -82,17 +82,4 @@
       @apply inline-block text-4xl leading-normal hover:opacity-40 transition-opacity duration-200;
     }
   }
-
-  &--featured {
-    @apply grid grid-cols-2 gap-4 max-w-2xl relative w-full border-l pl-8;
-
-    &-title {
-      @apply block absolute top-0 right-full w-2 text-xs uppercase tracking-widest font-semibold;
-      
-      span {
-        @apply block overflow-hidden absolute top-1/2 left-0 whitespace-nowrap transform rotate-90;
-        transform-origin: 0 0;
-      }
-    }
-  }
 }

@@ -12,7 +12,7 @@ export default {
     },
     {
       title: 'Klaviyo Site ID (Public API Key)',
-      description: 'For product waitlist and newsletter forms.',
+      description: 'For Klaviyo-powered newsletter forms.',
       name: 'klaviyoAccountID',
       type: 'string'
     }

@@ -7,8 +7,6 @@ const getBlockNames = types => {
         return 'Freeform'
       case 'accordions':
         return 'Accordions'
-      case 'productCard':
-        return 'Product Card'
       default:
         return null
     }
